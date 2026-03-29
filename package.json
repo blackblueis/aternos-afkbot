@@ -7,7 +7,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "mineflayer": "^4.20.0",
-    "mineflayer-bedrock": "^1.4.0"
+    "mineflayer": "latest",
+    "prismarine-auth": "latest"
   }
 }
