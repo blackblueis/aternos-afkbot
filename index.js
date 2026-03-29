@@ -1,30 +1,23 @@
 const mineflayer = require('mineflayer')
-const bedrock = require('mineflayer-bedrock')
 
 function createBot() {
     const bot = mineflayer.createBot({
         host: "CFLands.aternos.me",
         port: 55817,
         username: "CFCentral",
-        version: "1.20.x", // Compatível com as versões atuais do Aternos
+        version: "1.20.x",
         auth: 'offline'
     })
 
-    // Ativa o suporte para o Minecraft Bedrock
-    bedrock(bot)
-
     bot.on('spawn', () => {
-        console.log('Bot CFCentral entrou no servidor Crafting Lands!');
+        console.log('Bot CFCentral entrou no servidor!');
     })
 
-    bot.on('error', (err) => {
-        console.log('Ocorreu um erro: ', err);
-    })
-
-    // Se o bot cair, ele tenta entrar de novo em 10 segundos
+    bot.on('error', (err) => console.log('Erro: ', err))
+    
     bot.on('end', () => {
-        console.log('Bot desconectado. Tentando reconectar...');
-        setTimeout(createBot, 10000);
+        console.log('Caiu, reconectando...');
+        setTimeout(createBot, 5000);
     })
 }
 
