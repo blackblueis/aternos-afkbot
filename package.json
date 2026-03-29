@@ -1,16 +1,13 @@
 {
-  "name": "afkbot",
+  "name": "afkbot-bedrock",
   "version": "1.0.0",
-  "description": "",
+  "description": "Bot AFK para Crafting Lands",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "Beastifi3d",
-  "license": "ISC",
   "dependencies": {
-    "config": "latest",
-    "fs": "0.0.1-security",
-    "mineflayer": "latest"
+    "mineflayer": "latest",
+    "mineflayer-bedrock": "latest"
   }
 }
