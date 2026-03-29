@@ -5,7 +5,8 @@ function createBot() {
         host: "CFLands.aternos.me",
         port: 55817,
         username: "CFCentral",
-        version: "1.20.x",
+        // Removi o .x para evitar o erro de protocolo
+        version: false, 
         auth: 'offline'
     })
 
@@ -13,11 +14,13 @@ function createBot() {
         console.log('Bot CFCentral entrou no servidor!');
     })
 
-    bot.on('error', (err) => console.log('Erro: ', err))
+    bot.on('error', (err) => {
+        console.log('Erro encontrado: ', err.message);
+    })
     
     bot.on('end', () => {
-        console.log('Caiu, reconectando...');
-        setTimeout(createBot, 5000);
+        console.log('Bot caiu. Tentando reconectar em 10 segundos...');
+        setTimeout(createBot, 10000);
     })
 }
 
