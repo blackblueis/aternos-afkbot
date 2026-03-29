@@ -1,13 +1,13 @@
 {
   "name": "afkbot-bedrock",
   "version": "1.0.0",
-  "description": "Bot AFK para Crafting Lands",
+  "description": "Bot para o Crafting Lands",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "mineflayer": "latest",
-    "mineflayer-bedrock": "latest"
+    "mineflayer": "^4.20.0",
+    "mineflayer-bedrock": "^1.4.0"
   }
 }
