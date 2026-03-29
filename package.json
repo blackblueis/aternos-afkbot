@@ -9,8 +9,8 @@
   "author": "Beastifi3d",
   "license": "ISC",
   "dependencies": {
-    "config": "^3.3.3",
+    "config": "latest",
     "fs": "0.0.1-security",
-    "mineflayer": "^2.37.1"
+    "mineflayer": "latest"
   }
 }
