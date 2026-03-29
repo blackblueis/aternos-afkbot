@@ -5,23 +5,24 @@ function createBot() {
         host: "CFLands.aternos.me",
         port: 55817,
         username: "CFCentral",
-        // Forçando a versão exata que você está usando
-        version: "1.26.3", 
-        auth: 'offline',
-        checkTimeoutInterval: 60000
+        // Deixando vazio e forçando o protocolo Bedrock
+        version: false, 
+        hideErrors: true, // Ignora erros chatos de protocolo
+        checkTimeoutInterval: 90000,
+        auth: 'offline'
     })
 
     bot.on('spawn', () => {
-        console.log('Bot CFCentral entrou no servidor na versão 1.26!');
+        console.log('BOT LOGADO NO CRAFTING LANDS!');
     })
 
     bot.on('error', (err) => {
-        console.log('Erro de conexão: ', err.message);
+        console.log('Aguardando servidor... Erro atual: ', err.message);
     })
     
     bot.on('end', () => {
-        console.log('Bot caiu. Tentando reconectar em 10 segundos...');
-        setTimeout(createBot, 10000);
+        console.log('Reconectando em 15 segundos...');
+        setTimeout(createBot, 15000);
     })
 }
 
